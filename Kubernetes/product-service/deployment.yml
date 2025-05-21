@@ -1,0 +1,25 @@
+# product Service Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+  labels:
+    app: product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+      - name: product-service
+        image: selimhorri/product-service-ecommerce-boot:0.1.0
+        ports:
+        - containerPort: 8500
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "dev"
