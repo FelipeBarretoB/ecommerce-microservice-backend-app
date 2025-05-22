@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-discovery
+  namespace: ecommerce
   labels:
     app: service-discovery
 spec:
@@ -17,9 +18,12 @@ spec:
     spec:
       containers:
       - name: service-discovery
-        image: selimhorri/service-discovery-ecommerce-boot:0.1.0
+        image: pipebarreto/service-discovery:latest
         ports:
         - containerPort: 8761
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "dev"
+        - name: SPRING_ZIPKIN_BASE_URL
+          value: "http://zipkin-service:9411"
+

@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: favourite-service
+  namespace: ecommerce
   labels:
     app: favourite-service
 spec:
@@ -17,7 +18,7 @@ spec:
     spec:
       containers:
       - name: favourite-service
-        image: selimhorri/favourite-service-ecommerce-boot:0.1.0
+        image: pipebarreto/favourite-service:latest
         ports:
         - containerPort: 8800
         env:
@@ -25,3 +26,5 @@ spec:
           value: "dev"
         - name: SPRING_ZIPKIN_BASE_URL
           value: "http://zipkin-service:9411"
+        - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          value: "http://service-discovery-service:8761/eureka/"
