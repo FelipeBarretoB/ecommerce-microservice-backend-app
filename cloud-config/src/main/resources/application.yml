@@ -6,17 +6,12 @@ spring:
     base-url: ${SPRING_ZIPKIN_BASE_URL:http://localhost:9411/}
   application:
     name: CLOUD-CONFIG
-  jackson:
-    serialization:
-      indent-output: true
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE:http://service-discovery-service:8761/eureka}
-
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/SelimHorri/cloud-config-server
+          clone-on-start: true
 
 resilience4j:
   circuitbreaker:
@@ -43,3 +38,7 @@ management:
   endpoint:
     health:
       show-details: always
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://service-discovery-service:8761/eureka/}
