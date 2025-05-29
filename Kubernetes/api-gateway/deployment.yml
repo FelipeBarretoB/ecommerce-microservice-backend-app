@@ -28,3 +28,12 @@ spec:
           value: "http://zipkin-service:9411"
         - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
           value: "http://service-discovery-service:8761/eureka/"
+        - name: CLIENT_HOST
+          value: "http://frontend:30000"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1"

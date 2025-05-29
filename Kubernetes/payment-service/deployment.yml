@@ -18,12 +18,16 @@ spec:
     spec:
       containers:
       - name: payment-service
-        image: selimhorri/payment-service-ecommerce-boot:0.1.0
+        image: pipebarreto/payment-service:latest
         ports:
         - containerPort: 8400
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "dev"
+        - name: SPRING_ZIPKIN_BASE_URL
+          value: "http://zipkin-service:9411"
+        - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          value: "http://service-discovery-service:8761/eureka/"
         resources:
           requests:
             memory: "512Mi"

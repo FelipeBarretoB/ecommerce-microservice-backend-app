@@ -28,6 +28,8 @@ spec:
           value: "http://zipkin-service:9411"
         - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
           value: "http://service-discovery-service:8761/eureka/"
+        - name: EUREKA_INSTANCE_HOSTNAME
+          value: "cloud-config-service"
         resources:
           requests:
             memory: "512Mi"

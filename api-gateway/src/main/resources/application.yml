@@ -21,7 +21,7 @@ spring:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]':
-            allowed-origins: "${CLIENT_HOST:http://localhost:4200}"
+            allowed-origins: "${CLIENT_HOST:http://frontend:80}"
             allowed-headers: "*"
             exposed-headers: "*"
             allow-credentials: true
@@ -34,31 +34,31 @@ spring:
               - OPTIONS
       routes:
       - id: ORDER-SERVICE
-        uri: lb://ORDER-SERVICE
+        uri: http://order-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/order-service/**
       - id: PAYMENT-SERVICE
-        uri: lb://PAYMENT-SERVICE
+        uri: http://payment-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/payment-service/**
       - id: PRODUCT-SERVICE
-        uri: lb://PRODUCT-SERVICE
+        uri: http://product-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/product-service/**
       - id: SHIPPING-SERVICE
-        uri: lb://SHIPPING-SERVICE
+        uri: http://shipping-service.ecommerce.svc.cluster.local:8600
         predicates:
         - Path=/shipping-service/**
       - id: USER-SERVICE
-        uri: lb://USER-SERVICE
+        uri: http://user-service.ecommerce.svc.cluster.local:8700
         predicates:
         - Path=/user-service/**
       - id: FAVOURITE-SERVICE
-        uri: lb://FAVOURITE-SERVICE
+        uri: http://favourite-service.ecommerce.svc.cluster.local:8800
         predicates:
         - Path=/favourite-service/**
       - id: PROXY-CLIENT
-        uri: lb://PROXY-CLIENT
+        uri: http://proxy-client.ecommerce.svc.cluster.local:8900
         predicates:
         - Path=/app/**
 
@@ -87,15 +87,3 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://service-discovery-service:8761/eureka/}
-
-
-
-
-
-
-
-
-
-
- 
- 

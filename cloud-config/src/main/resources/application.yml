@@ -40,5 +40,11 @@ management:
       show-details: always
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://service-discovery-service:8761/eureka/}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME:cloud-config-service}
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
