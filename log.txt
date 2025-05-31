@@ -1,0 +1,83 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.7)
+
+2025-05-31 18:25:18.412  INFO [favourite-service,,] 1 --- [           main] c.s.app.FavouriteServiceApplication      : Starting FavouriteServiceApplication v0.1.0 using Java 11.0.16 on favourite-service-688864b976-fkpb6 with PID 1 (/home/app/favourite-service.jar started by root in /home/app)
+2025-05-31 18:25:18.414  INFO [favourite-service,,] 1 --- [           main] c.s.app.FavouriteServiceApplication      : The following profiles are active: stage
+2025-05-31 18:25:18.605  INFO [favourite-service,,] 1 --- [           main] o.s.b.context.config.ConfigDataLoader    : Fetching config from server at : http://cloud-config-service:9296
+2025-05-31 18:25:18.605  INFO [favourite-service,,] 1 --- [           main] o.s.b.context.config.ConfigDataLoader    : Located environment: name=favourite-service, profiles=[stage], label=null, version=be46dd4bca5b2663375456c55304bb492c408a4f, state=null
+2025-05-31 18:25:23.814  INFO [favourite-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31 18:25:23.821 DEBUG [favourite-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Scanning for JPA repositories in packages com.selimhorri.app.
+2025-05-31 18:25:23.908 DEBUG [favourite-service,,] 1 --- [           main] o.s.d.r.c.RepositoryComponentProvider    : Identified candidate component class: URL [jar:file:/home/app/favourite-service.jar!/BOOT-INF/classes!/com/selimhorri/app/repository/FavouriteRepository.class]
+2025-05-31 18:25:24.410  INFO [favourite-service,,] 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 587 ms. Found 1 JPA repository interfaces.
+2025-05-31 18:25:26.112  INFO [favourite-service,,] 1 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6697e196-e761-3f82-8d43-69e702bec36e
+2025-05-31 18:25:29.520  INFO [favourite-service,,] 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8300 (http)
+2025-05-31 18:25:29.529  INFO [favourite-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31 18:25:29.529  INFO [favourite-service,,] 1 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-05-31 18:25:29.718  INFO [favourite-service,,] 1 --- [           main] o.a.c.c.C.[.[.[/favourite-service]       : Initializing Spring embedded WebApplicationContext
+2025-05-31 18:25:29.718  INFO [favourite-service,,] 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11112 ms
+2025-05-31 18:25:31.517 DEBUG [favourite-service,,] 1 --- [           main] o.s.w.s.r.ResourceUrlEncodingFilter      : Filter 'resourceUrlEncodingFilter' configured for use
+2025-05-31 18:25:32.913 DEBUG [favourite-service,,] 1 --- [/spans} check()] org.springframework.web.HttpLogging      : HTTP POST http://zipkin-service:9411/api/v2/spans
+2025-05-31 18:25:32.915 DEBUG [favourite-service,,] 1 --- [/spans} check()] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2025-05-31 18:25:32.915 DEBUG [favourite-service,,] 1 --- [/spans} check()] org.springframework.web.HttpLogging      : Writing [[B@54a4c896] as "application/json"
+2025-05-31 18:25:32.918 DEBUG [favourite-service,,] 1 --- [/spans} check()] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2025-05-31 18:25:37.910  INFO [favourite-service,,] 1 --- [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 7.7.3 by Redgate
+2025-05-31 18:25:37.915  INFO [favourite-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31 18:25:39.240  INFO [favourite-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31 18:25:39.707  INFO [favourite-service,,] 1 --- [           main] o.f.c.i.database.base.DatabaseType       : Database: jdbc:mysql://mysql:3306/ecommerce_stage_db (MySQL 8.0)
+2025-05-31 18:25:40.412  WARN [favourite-service,,] 1 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected failed migration to version 1 (create favourites table). Please remove any half-completed changes then run repair to fix the schema history.
+2025-05-31 18:25:40.413  INFO [favourite-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31 18:25:40.516  INFO [favourite-service,,] 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31 18:25:41.517  WARN [favourite-service,,] 1 --- [           main] z.r.AsyncReporter$BoundedAsyncReporter   : Timed out waiting for in-flight spans to send
+2025-05-31 18:25:41.522  INFO [favourite-service,,] 1 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-05-31 18:25:41.608  INFO [favourite-service,,] 1 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2025-05-31 18:25:41.709 ERROR [favourite-service,,] 1 --- [           main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/autoconfigure/flyway/FlywayAutoConfiguration$FlywayConfiguration.class]: Invocation of init method failed; nested exception is org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected failed migration to version 1 (create favourites table). Please remove any half-completed changes then run repair to fix the schema history.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1154) ~[spring-context-5.3.13.jar!/:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:908) ~[spring-context-5.3.13.jar!/:5.3.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.13.jar!/:5.3.13]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343) ~[spring-boot-2.5.7.jar!/:2.5.7]
+	at com.selimhorri.app.FavouriteServiceApplication.main(FavouriteServiceApplication.java:12) ~[classes!/:0.1.0]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49) ~[favourite-service.jar:0.1.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108) ~[favourite-service.jar:0.1.0]
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58) ~[favourite-service.jar:0.1.0]
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88) ~[favourite-service.jar:0.1.0]
+Caused by: org.flywaydb.core.api.exception.FlywayValidateException: Validate failed: Migrations have failed validation
+Detected failed migration to version 1 (create favourites table). Please remove any half-completed changes then run repair to fix the schema history.
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:173) ~[flyway-core-7.7.3.jar!/:na]
+	at org.flywaydb.core.Flyway$1.execute(Flyway.java:165) ~[flyway-core-7.7.3.jar!/:na]
+	at org.flywaydb.core.Flyway.execute(Flyway.java:572) ~[flyway-core-7.7.3.jar!/:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:165) ~[flyway-core-7.7.3.jar!/:na]
+	at org.springframework.boot.autoconfigure.flyway.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:66) ~[spring-boot-autoconfigure-2.5.7.jar!/:2.5.7]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.13.jar!/:5.3.13]
+	... 26 common frames omitted
+

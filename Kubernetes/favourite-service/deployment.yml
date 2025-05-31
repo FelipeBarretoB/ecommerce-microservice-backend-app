@@ -18,12 +18,12 @@ spec:
     spec:
       containers:
       - name: favourite-service
-        image: pipebarreto/favourite-service:latest
+        image: pipebarreto/favourite-service:stage
         ports:
         - containerPort: 8800
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "dev"
+          value: "stage"
         - name: SPRING_ZIPKIN_BASE_URL
           value: "http://zipkin-service:9411"
         - name: EUREKA_CLIENT_REGION
