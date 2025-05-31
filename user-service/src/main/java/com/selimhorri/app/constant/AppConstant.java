@@ -14,20 +14,20 @@ public abstract class AppConstant {
 	@NoArgsConstructor(access = AccessLevel.PRIVATE)
 	public abstract class DiscoveredDomainsApi {
 		
-		public static final String USER_SERVICE_HOST = "http://USER-SERVICE/user-service";
-		public static final String USER_SERVICE_API_URL = "http://USER-SERVICE/user-service/api/users";
+		public static final String USER_SERVICE_HOST = "http://user-service/user-service";
+		public static final String USER_SERVICE_API_URL = "http://user-service/user-service/api/users";
 		
-		public static final String PRODUCT_SERVICE_HOST = "http://PRODUCT-SERVICE/product-service";
-		public static final String PRODUCT_SERVICE_API_URL = "http://PRODUCT-SERVICE/product-service/api/products";
+		public static final String PRODUCT_SERVICE_HOST = "http://product-service/product-service";
+		public static final String PRODUCT_SERVICE_API_URL = "http://product-service/product-service/api/products";
 		
-		public static final String ORDER_SERVICE_HOST = "http://ORDER-SERVICE/order-service";
-		public static final String ORDER_SERVICE_API_URL = "http://ORDER-SERVICE/order-service/api/orders";
+		public static final String ORDER_SERVICE_HOST = "http://order-service/order-service";
+		public static final String ORDER_SERVICE_API_URL = "http://order-service/order-service/api/orders";
 		
-		public static final String FAVOURITE_SERVICE_HOST = "http://FAVOURITE-SERVICE/favourite-service";
-		public static final String FAVOURITE_SERVICE_API_URL = "http://FAVOURITE-SERVICE/favourite-service/api/favourites";
+		public static final String FAVOURITE_SERVICE_HOST = "http://favourite-service/favourite-service";
+		public static final String FAVOURITE_SERVICE_API_URL = "http://favourite-service/favourite-service/api/favourites";
 		
-		public static final String PAYMENT_SERVICE_HOST = "http://PAYMENT-SERVICE/payment-service";
-		public static final String PAYMENT_SERVICE_API_URL = "http://PAYMENT-SERVICE/payment-service/api/payments";
+		public static final String PAYMENT_SERVICE_HOST = "http://payment-service/payment-service";
+		public static final String PAYMENT_SERVICE_API_URL = "http://payment-service/payment-service/api/payments";
 		
 		public static final String SHIPPING_SERVICE_HOST = "http://SHIPPING-SERVICE/shipping-service";
 		public static final String SHIPPING_SERVICE_API_URL = "http://SHIPPING-SERVICE/shipping-service/api/shippings";

@@ -492,15 +492,15 @@ This will result in the following response:
                     "status": "UP",
                     "details": {
                         "applications": {
-                            "FAVOURITE-SERVICE": 1,
-                            "PROXY-CLIENT": 1,
+                            "favourite-service": 1,
+                            "proxy-client": 1,
                             "API-GATEWAY": 1,
-                            "PAYMENT-SERVICE": 1,
-                            "ORDER-SERVICE": 1,
+                            "payment-service": 1,
+                            "order-service": 1,
                             "CLOUD-CONFIG": 1,
-                            "PRODUCT-SERVICE": 1,
+                            "product-service": 1,
                             "SHIPPING-SERVICE": 1,
-                            "USER-SERVICE": 1
+                            "user-service": 1
                         }
                     }
                 }

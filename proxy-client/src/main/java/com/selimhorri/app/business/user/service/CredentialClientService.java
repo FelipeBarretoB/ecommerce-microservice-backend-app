@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.selimhorri.app.business.user.model.CredentialDto;
 import com.selimhorri.app.business.user.model.response.CredentialUserServiceCollectionDtoResponse;
 
-@FeignClient(name = "USER-SERVICE", contextId = "credentialClientService", path = "/user-service/api/credentials", decode404 = true)
+@FeignClient(name = "user-service", contextId = "credentialClientService", path = "/user-service/api/credentials", decode404 = true)
 public interface CredentialClientService {
 	
 	@GetMapping
