@@ -18,9 +18,28 @@ spec:
     spec:
       containers:
       - name: order-service
-        image: selimhorri/order-service-ecommerce-boot:0.1.0
+        image: pipebarreto/order-service:latest
         ports:
         - containerPort: 8300
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "dev"
+        - name: SPRING_ZIPKIN_BASE_URL
+          value: "http://zipkin-service:9411"
+        - name: EUREKA_CLIENT_REGION
+          value: "default"
+        - name: EUREKA_CLIENT_AVAILIBILITY_ZONES_DEFAULT
+          value: "myzone"
+        - name: EUREKA_CLIENT_SERVICEURL_MYZONE
+          value: "http://service-discovery-service:8761/eureka/"
+        - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          value: "http://service-discovery-service:8761/eureka/"
+        - name: SPRING_CONFIG_IMPORT
+          value: optional:configserver:http://cloud-config-service:9296
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"

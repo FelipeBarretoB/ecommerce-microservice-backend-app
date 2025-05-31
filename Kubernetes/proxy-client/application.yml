@@ -1,26 +1,25 @@
-# user Service Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: user-service
+  name: proxy-client
   namespace: ecommerce
   labels:
-    app: user-service
+    app: proxy-client
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: user-service
+      app: proxy-client
   template:
     metadata:
       labels:
-        app: user-service
+        app: proxy-client
     spec:
       containers:
-      - name: user-service
-        image: pipebarreto/user-service:latest
+      - name: proxy-client
+        image: pipebarreto/proxy-client:latest
         ports:
-        - containerPort: 8700
+        - containerPort: 8900
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: "dev"
@@ -37,7 +36,7 @@ spec:
         - name: SPRING_CONFIG_IMPORT
           value: optional:configserver:http://cloud-config-service:9296
         - name: EUREKA_INSTANCE_HOSTNAME
-          value: "user-service"
+          value: "proxy-client"
         resources:
           limits:
             memory: "512Mi"

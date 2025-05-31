@@ -33,32 +33,32 @@ spring:
               - PATCH
               - OPTIONS
       routes:
-      - id: ORDER-SERVICE
-        uri: lb://ORDER-SERVICE
+      - id: order-service
+        uri: http://order-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/order-service/**
-      - id: PAYMENT-SERVICE
-        uri: lb://PAYMENT-SERVICE
+      - id: payment-service
+        uri: http://payment-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/payment-service/**
-      - id: PRODUCT-SERVICE
-        uri: lb://PRODUCT-SERVICE
+      - id: product-service
+        uri: http://product-service.ecommerce.svc.cluster.local:8500
         predicates:
         - Path=/product-service/**
       - id: SHIPPING-SERVICE
-        uri: lb://SHIPPING-SERVICE
+        uri: http://shipping-service.ecommerce.svc.cluster.local:8600
         predicates:
         - Path=/shipping-service/**
-      - id: USER-SERVICE
-        uri: lb://USER-SERVICE
+      - id: user-service
+        uri: http://user-service.ecommerce.svc.cluster.local:8700
         predicates:
         - Path=/user-service/**
-      - id: FAVOURITE-SERVICE
-        uri: lb://FAVOURITE-SERVICE
+      - id: favourite-service
+        uri: http://favourite-service.ecommerce.svc.cluster.local:8800
         predicates:
         - Path=/favourite-service/**
-      - id: PROXY-CLIENT
-        uri: lb://PROXY-CLIENT
+      - id: proxy-client
+        uri: http://proxy-client.ecommerce.svc.cluster.local:8900
         predicates:
         - Path=/app/**
         
@@ -88,15 +88,3 @@ eureka:
   client:
     service-url:
       defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://service-discovery-service:8761/eureka/}
-
-
-
-
-
-
-
-
-
-
- 
- 

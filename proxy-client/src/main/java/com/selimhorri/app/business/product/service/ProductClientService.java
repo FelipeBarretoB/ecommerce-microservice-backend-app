@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.selimhorri.app.business.product.model.ProductDto;
 import com.selimhorri.app.business.product.model.response.ProductProductServiceCollectionDtoResponse;
 
-@FeignClient(name = "PRODUCT-SERVICE", contextId = "productClientService", path = "/product-service/api/products")
+@FeignClient(name = "product-service", contextId = "productClientService", path = "/product-service/api/products")
 public interface ProductClientService {
 	
 	@GetMapping

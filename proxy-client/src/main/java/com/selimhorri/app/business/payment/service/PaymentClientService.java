@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.selimhorri.app.business.payment.model.PaymentDto;
 import com.selimhorri.app.business.payment.model.response.PaymentPaymentServiceDtoCollectionResponse;
 
-@FeignClient(name = "PAYMENT-SERVICE", contextId = "paymentClientService", path = "/payment-service/api/payments")
+@FeignClient(name = "payment-service", contextId = "paymentClientService", path = "/payment-service/api/payments")
 public interface PaymentClientService {
 	
 	@GetMapping
