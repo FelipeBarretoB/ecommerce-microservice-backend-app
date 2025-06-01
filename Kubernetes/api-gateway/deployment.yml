@@ -23,7 +23,7 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "stage"
+          value: "dev"
         - name: SPRING_ZIPKIN_BASE_URL
           value: "http://zipkin-service:9411"
         - name: EUREKA_CLIENT_REGION
