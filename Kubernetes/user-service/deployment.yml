@@ -18,12 +18,12 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: pipebarreto/user-service:latest
+        image: pipebarreto/user-service:stage
         ports:
         - containerPort: 8700
         env:
         - name: SPRING_PROFILES_ACTIVE
-          value: "dev"
+          value: "stage"
         - name: SPRING_ZIPKIN_BASE_URL
           value: "http://zipkin-service:9411"
         - name: EUREKA_CLIENT_REGION
@@ -40,7 +40,7 @@ spec:
           value: "user-service"
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
             memory: "256Mi"
