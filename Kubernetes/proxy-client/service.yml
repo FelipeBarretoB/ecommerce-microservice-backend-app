@@ -10,4 +10,4 @@ spec:
   - protocol: TCP
     port: 8900
     targetPort: 8900
-  type: NodePort
+  type: ClusterIP

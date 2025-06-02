@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: service-discovery
-        image: pipebarreto/service-discovery:test
+        image: pipebarreto/service-discovery:stage
         ports:
         - containerPort: 8761
         env:
@@ -28,4 +28,11 @@ spec:
           value: "http://zipkin-service:9411"
         - name: SPRING_CONFIG_IMPORT
           value: optional:configserver:http://cloud-config-service:9296/
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
 

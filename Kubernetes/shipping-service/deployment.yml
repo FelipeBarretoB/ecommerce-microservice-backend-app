@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: shipping-service
-        image: pipebarreto/shipping-service:latest
+        image: pipebarreto/shipping-service:stage
         ports:
         - containerPort: 8600
         env:
@@ -40,7 +40,7 @@ spec:
           value: "shipping-service"
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
             memory: "256Mi"

@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: favourite-service
-        image: pipebarreto/favourite-service:latest
+        image: pipebarreto/favourite-service:stage
         ports:
         - containerPort: 8800
         env:
@@ -40,7 +40,7 @@ spec:
           value: "favourite-service"
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
             memory: "256Mi"

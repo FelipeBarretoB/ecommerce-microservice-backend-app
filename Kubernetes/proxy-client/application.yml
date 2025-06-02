@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: proxy-client
-        image: pipebarreto/proxy-client:latest
+        image: pipebarreto/proxy-client:stage
         ports:
         - containerPort: 8900
         env:
@@ -39,7 +39,7 @@ spec:
           value: "proxy-client"
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
             memory: "256Mi"

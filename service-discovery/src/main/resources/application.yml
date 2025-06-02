@@ -8,7 +8,7 @@ spring:
     name: service-discovery
   profiles:
     active:
-    - dev
+    - ${SPRING_PROFILES_ACTIVE:dev}
 
 resilience4j:
   circuitbreaker:

@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: payment-service
-        image: pipebarreto/payment-service:latest
+        image: pipebarreto/payment-service:stage
         ports:
         - containerPort: 8400
         env:

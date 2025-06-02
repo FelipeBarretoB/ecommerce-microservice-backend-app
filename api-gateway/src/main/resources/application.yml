@@ -12,7 +12,7 @@ spring:
     name: API-GATEWAY
   profiles:
     active:
-    - dev
+    - ${SPRING_PROFILES_ACTIVE:dev}
   cloud:
     gateway:
       default-filters:

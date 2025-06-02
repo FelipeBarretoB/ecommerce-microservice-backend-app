@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: api-gateway
-        image: pipebarreto/api-gateway:latest
+        image: pipebarreto/api-gateway:stage
         ports:
         - containerPort: 8080
         env:

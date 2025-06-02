@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: pipebarreto/user-service:latest
+        image: pipebarreto/user-service:stage
         ports:
         - containerPort: 8700
         env:
@@ -40,7 +40,7 @@ spec:
           value: "user-service"
         resources:
           limits:
-            memory: "512Mi"
+            memory: "1Gi"
             cpu: "500m"
           requests:
             memory: "256Mi"
