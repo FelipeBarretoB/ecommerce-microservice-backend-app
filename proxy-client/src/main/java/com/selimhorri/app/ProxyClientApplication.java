@@ -14,16 +14,4 @@ public class ProxyClientApplication {
 		SpringApplication.run(ProxyClientApplication.class, args);
 	}
 	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
