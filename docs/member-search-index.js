@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"com.selimhorri.app","c":"ApiGatewayApplication","l":"ApiGatewayApplication()","url":"%3Cinit%3E()"},{"p":"com.selimhorri.app","c":"ApiGatewayApplication","l":"main(String[])","url":"main(java.lang.String[])"}]
