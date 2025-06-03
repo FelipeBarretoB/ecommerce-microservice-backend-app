@@ -24,5 +24,14 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
+      - name: Generate Javadoc
+        run: ./mvnw javadoc:javadoc
+
+      - name: Upload Javadoc
+        uses: actions/upload-artifact@v4
+        with:
+          name: javadoc
+          path: '**/target/site/apidocs'
+
       - name: Run Checkstyle
         run: ./mvnw checkstyle:check -fae
