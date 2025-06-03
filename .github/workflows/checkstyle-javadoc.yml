@@ -25,7 +25,7 @@ jobs:
           java-version: '11'
 
       - name: Generate Javadoc
-        run: ./mvnw javadoc:javadoc
+        run: ./mvnw javadoc:aggregate
 
       - name: Copy Javadoc to docs folder
         run: |
@@ -42,6 +42,6 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Run Checkstyle
         run: ./mvnw checkstyle:check -fae
