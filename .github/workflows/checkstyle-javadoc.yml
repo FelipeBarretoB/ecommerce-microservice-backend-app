@@ -1,4 +1,4 @@
-name: Java Lint (Checkstyle)
+name: Java Lint (Checkstyle and Javadoc)
 
 on:
   push:
@@ -26,6 +26,22 @@ jobs:
 
       - name: Generate Javadoc
         run: ./mvnw javadoc:javadoc
+
+      - name: Copy Javadoc to docs folder
+        run: |
+          rm -rf docs
+          mkdir -p docs
+          cp -r */target/site/apidocs/* docs/ || cp -r target/site/apidocs/* docs/ || echo "No apidocs found"
+
+      - name: Commit and push Javadoc
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git commit -m "docs: update Javadoc [skip ci]" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload Javadoc
         uses: actions/upload-artifact@v4
