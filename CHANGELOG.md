@@ -1,3 +1,18 @@
+# [1.0.0-dev.2](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2025-06-04)
+
+
+### Bug Fixes
+
+* deleted the upload of the documentation, as it should now be available in the repo ([d25219b](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/d25219b52f4bc011066802c7cd0c71d74d4a034e))
+* forgot I deleted the checksyle.xml and left a call to it in the parent pom ([138abd3](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/138abd3e0db57738dab3fda7e0f9e2f6a71a9076))
+* something went wrong with javadoc method, added new javadoc plugin to parent pom ([4eb242d](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/4eb242dc2c2df132ee3cb07d09a1f72e75889cb4))
+
+
+### Features
+
+* added javadoc generation and check with checkstyle ([2e3e1ba](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/2e3e1ba73493e60dab471d8f2b5e41dbc9bca936))
+* the documentation should now be available in a /doc folder ([9f4773a](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/9f4773a98d41625a513c8130de8f3139bbac8da9))
+
 # 1.0.0-dev.1 (2025-06-03)
 
 
