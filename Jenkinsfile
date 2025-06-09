@@ -13,7 +13,7 @@ def services = [
 pipeline {
   agent any
   environment {
-    REGISTRY = "your-registry"
+    REGISTRY = "pipebarreto"
     VERSION = "" // Will be set in a stage
   }
   stages {
