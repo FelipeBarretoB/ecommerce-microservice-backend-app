@@ -16,11 +16,6 @@ pipeline {
     VERSION = "" // Will be set in a stage
   }
   stages {
-    stage('List Workspace') {
-      steps {
-        sh 'ls -l'
-      }
-    }
     stage('Get Semantic Version') {
       steps {
         script {
@@ -54,8 +49,8 @@ pipeline {
             sh """
               cd ${svc.name}
               ./mvnw clean package
-              docker build -t $REGISTRY/${svc.name}:$VERSION -f Dockerfile .
-              docker push $REGISTRY/${svc.name}:$VERSION
+              docker build -t $REGISTRY/${svc.name}:${env.VERSION} -f Dockerfile .
+              docker push $REGISTRY/${svc.name}:${env.VERSION}
               cd ..
             """
           }
