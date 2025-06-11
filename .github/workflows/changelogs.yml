@@ -33,6 +33,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
-      
-      - name: Update Maven parent version in modules
-        run: ./mvnw versions:update-parent -DgenerateBackupPoms=false
