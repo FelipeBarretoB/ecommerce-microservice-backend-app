@@ -17,6 +17,12 @@ pipeline {
     VERSION = "" // Will be set in a stage
   }
   stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
     stage('Clean and Package') {
       steps {
         sh './mvnw clean package'
