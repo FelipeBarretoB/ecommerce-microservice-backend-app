@@ -16,6 +16,11 @@ pipeline {
     VERSION = "" // Will be set in a stage
   }
   stages {
+    stage('List Workspace') {
+      steps {
+        sh 'ls -l'
+      }
+    }
     stage('Get Semantic Version') {
       steps {
         script {
