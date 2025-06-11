@@ -24,7 +24,7 @@ pipeline {
     stage('Get Semantic Version') {
       steps {
         script {
-          def version = sh(script: "mvn help:evaluate -Dexpression=project.version -q -DforceStdout", returnStdout: true).trim()
+          def version = sh(script: "./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout", returnStdout: true).trim()
           env.VERSION = version
         }
       }
