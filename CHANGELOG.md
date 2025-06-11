@@ -1,3 +1,18 @@
+# [1.0.0-dev.4](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2025-06-11)
+
+
+### Bug Fixes
+
+* added checkout stage, as it appears jenkins is not downloading the parent pom and this is causing problems ([b5dcaa3](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/b5dcaa34302fd5b04d5292f81314433e6865a118))
+* breacking change, semantic changed the version of the parent pom but not the son poms, now we test if the new githubactions works ([7d22e10](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/7d22e10f0e4f39c9ae85a72f6bc698c71ce4b8ba))
+* changed the way the dockerimage is built in the jenkins file ([6a4176c](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/6a4176c1790507b3715864972dabfdc67ffefbc6))
+* changed the way versions worked in the dockerfiles and project poms ([5afd313](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/5afd313870ef48bbf6071b7563589ef87522dd4e))
+* changed the way versions worked in the dockerfiles and project poms ([67ef718](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/67ef718c5deb260d9df2d356c8026291920b5027))
+* delete stage column, re added i ([cda6bf4](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/cda6bf4b4040b0ba3df6c5a4a37b16529f0e0ab7))
+* delete stage column, re added it ([71838a0](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/71838a042d35fbef2e1a43724f3856d251249a42))
+* moved the maven clean command and changed the building loop a bit ([c368441](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/c368441692644bb3d9562a7889512f91c14a4631))
+* springboot version change appears to have broken a lot of stuff ([cffaee7](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/cffaee743f605a699d42886e6bbc318e6c8e1021))
+
 # [1.0.0-dev.3](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2025-06-11)
 
 
