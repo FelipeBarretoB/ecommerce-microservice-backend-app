@@ -16,18 +16,7 @@ pipeline {
     REGISTRY = "pipebarreto"
     VERSION = "" // Will be set in a stage
   }
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
 
-    stage('Clean and Package') {
-      steps {
-        sh './mvnw clean package'
-      }
-    }
     stage('Get Semantic Version') {
       steps {
         script {
@@ -59,6 +48,8 @@ pipeline {
         script {
           env.CHANGED_SERVICES.each { svc ->
             sh """
+              cd ${svc.name}
+              ./mvnw clean package
               docker build -t $REGISTRY/${svc.name}:$VERSION -f Dockerfile .
               docker push $REGISTRY/${svc.name}:$VERSION
             """
