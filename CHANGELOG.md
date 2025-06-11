@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2025-06-11)
+
+
+### Bug Fixes
+
+* still having problem with the release versions ([e5593da](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/e5593da2f8e4484b4428311777a8b7cd917319aa))
+
 # [1.0.0-dev.4](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2025-06-11)
 
 
