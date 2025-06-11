@@ -1,3 +1,11 @@
+# [1.0.0-dev.3](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2025-06-11)
+
+
+### Features
+
+* added jacoco for coverage ([66f6815](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/66f6815bb80c4a54195abea37195599fd8bb6f1b))
+* added sonar workflow ([bf8b1fc](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/bf8b1fc7f35e3e61f9b1163f72578ddf8fa26eb1))
+
 # [1.0.0-dev.2](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2025-06-04)
 
 
