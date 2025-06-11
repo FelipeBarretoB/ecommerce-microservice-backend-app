@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.selimhorri</groupId>
 		<artifactId>ecommerce-microservice-backend</artifactId>
-		<version>0.1.0</version>
+		<version>1.0.0-dev.3</version>
 	</parent>
 	<artifactId>proxy-client</artifactId>
 	<name>proxy-client</name>
@@ -112,6 +112,3 @@
 	</build>
 	
 </project>
-
-
-
