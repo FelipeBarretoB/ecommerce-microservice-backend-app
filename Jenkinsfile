@@ -53,7 +53,7 @@ pipeline {
         script {
           env.CHANGED_SERVICES.each { svc ->
             sh """
-              docker build -t $REGISTRY/${svc.name}:$VERSION -f ${svc.dockerfile} .
+              docker build -t $REGISTRY/${svc.name}:$VERSION -f Dockerfile .
               docker push $REGISTRY/${svc.name}:$VERSION
             """
           }
