@@ -36,18 +36,21 @@ pipeline {
             script: "git diff --name-only origin/master...HEAD | awk -F/ '{print \$1}' | sort -u",
             returnStdout: true
           ).trim().split('\n') as Set
-          env.CHANGED_SERVICES = services.findAll { svc -> changedDirs.contains(svc.path) }
-          echo "Changed services: ${env.CHANGED_SERVICES*.name}"
+          def changedServices = services.findAll { svc -> changedDirs.contains(svc.path) }
+          env.CHANGED_SERVICES = changedServices.collect { it.name }.join(',')
+          echo "Changed services: ${env.CHANGED_SERVICES}"
         }
       }
     }
     stage('Build and Push Changed Images') {
       when {
-        expression { env.CHANGED_SERVICES && env.CHANGED_SERVICES.size() > 0 }
+        expression { env.CHANGED_SERVICES && env.CHANGED_SERVICES.trim() }
       }
       steps {
         script {
-          env.CHANGED_SERVICES.each { svc ->
+          def changedServiceNames = env.CHANGED_SERVICES.split(',')
+          def changedServices = services.findAll { svc -> changedServiceNames.contains(svc.name) }
+          changedServices.each { svc ->
             sh """
               cd ${svc.name}
               ./mvnw clean package
