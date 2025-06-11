@@ -1,3 +1,10 @@
+# [1.0.0-dev.7](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2025-06-11)
+
+
+### Bug Fixes
+
+* added wrapper for maven as it's causing trouble ([57c0ae0](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/57c0ae05257dcd9222fb770933c3c04c27e11234))
+
 # [1.0.0-dev.6](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2025-06-11)
 
 
