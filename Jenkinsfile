@@ -7,7 +7,6 @@ def services = [
   [name: 'shipping-service', path: 'shipping-service', dockerfile: 'shipping-service/Dockerfile'],
   [name: 'payment-service', path: 'payment-service', dockerfile: 'payment-service/Dockerfile'],
   [name: 'proxy-client', path: 'proxy-client', dockerfile: 'proxy-client/Dockerfile']
-
 ]
 
 pipeline {
@@ -16,7 +15,7 @@ pipeline {
     REGISTRY = "pipebarreto"
     VERSION = "" // Will be set in a stage
   }
-
+  stages {
     stage('Get Semantic Version') {
       steps {
         script {
@@ -28,13 +27,10 @@ pipeline {
     stage('Detect Changed Services') {
       steps {
         script {
-          // Get changed directories since last main/master commit
           def changedDirs = sh(
             script: "git diff --name-only origin/master...HEAD | awk -F/ '{print \$1}' | sort -u",
             returnStdout: true
           ).trim().split('\n') as Set
-
-          // Filter services that have changed
           env.CHANGED_SERVICES = services.findAll { svc -> changedDirs.contains(svc.path) }
           echo "Changed services: ${env.CHANGED_SERVICES*.name}"
         }
@@ -52,6 +48,7 @@ pipeline {
               ./mvnw clean package
               docker build -t $REGISTRY/${svc.name}:$VERSION -f Dockerfile .
               docker push $REGISTRY/${svc.name}:$VERSION
+              cd ..
             """
           }
         }
