@@ -1,3 +1,16 @@
+# [1.0.0-dev.8](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2025-06-12)
+
+
+### Bug Fixes
+
+* minor change to buildimage.yml to have it working on pr and test if the workflow works ([b60f8a4](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/b60f8a42de966ba1b757dca3c77768e65cb58462))
+* minor changes to test actions ([0eb33d5](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/0eb33d5ca32704009635b036d126f000bfadc787))
+
+
+### Features
+
+* turn jenkins file to githubactions as the use of docker in jenkins was causing trouble ([992f859](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/992f859717d0fbd524ee108ff0bf5e8f562f8ba7))
+
 # [1.0.0-dev.7](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.6...v1.0.0-dev.7) (2025-06-11)
 
 
