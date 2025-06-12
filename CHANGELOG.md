@@ -1,3 +1,10 @@
+# [1.0.0-dev.10](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2025-06-12)
+
+
+### Bug Fixes
+
+* missed service discovery and had syntax error in proxy client ([1088f51](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/1088f51c033295edef310425b8ad82c6cf979099))
+
 # [1.0.0-dev.9](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2025-06-12)
 
 
