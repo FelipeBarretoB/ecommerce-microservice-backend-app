@@ -16,8 +16,6 @@ on:
       - 'payment-service/**'
       - 'proxy-client/**'
   pull_request:
-    branches:
-      - develop
     paths:
       - 'api-gateway/**'
       - 'user-service/**'
