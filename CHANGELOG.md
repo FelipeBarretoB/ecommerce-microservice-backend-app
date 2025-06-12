@@ -1,3 +1,11 @@
+# [1.0.0-dev.9](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.8...v1.0.0-dev.9) (2025-06-12)
+
+
+### Features
+
+* separeted all building image to diferent actions as it was causing problems ([dd9ff3b](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/dd9ff3bd91bae3e9b8b993012e2ea894ceace389))
+* separeted all building image to diferent actions as it was causing problems ([5f97762](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/5f97762ad6fd0f7b48c4c961fbb0351c3e3f5852))
+
 # [1.0.0-dev.8](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.7...v1.0.0-dev.8) (2025-06-12)
 
 
