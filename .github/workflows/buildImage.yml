@@ -14,16 +14,6 @@ on:
       - 'shipping-service/**'
       - 'payment-service/**'
       - 'proxy-client/**'
-  pull_request:
-    paths:
-      - 'api-gateway/**'
-      - 'user-service/**'
-      - 'product-service/**'
-      - 'favourite-service/**'
-      - 'order-service/**'
-      - 'shipping-service/**'
-      - 'payment-service/**'
-      - 'proxy-client/**'
   workflow_dispatch:
     inputs:
       service:

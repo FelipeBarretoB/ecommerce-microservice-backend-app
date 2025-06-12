@@ -8,9 +8,3 @@ class ShippingServiceApplicationTests {
 	
 	
 }
-
-
-
-
-
-
