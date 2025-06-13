@@ -3,13 +3,11 @@ name: Build and Release Proxy Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'proxy-client/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'proxy-client/**'

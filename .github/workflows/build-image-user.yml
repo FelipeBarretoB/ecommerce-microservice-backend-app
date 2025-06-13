@@ -3,13 +3,11 @@ name: Build and Release User Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'user-service/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'user-service/**'

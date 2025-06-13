@@ -3,13 +3,11 @@ name: Build and Release Order Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'order-service/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'order-service/**'

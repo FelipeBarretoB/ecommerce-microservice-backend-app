@@ -3,13 +3,11 @@ name: Build and Release Cloud Config
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'cloud-config/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'cloud-config/**'

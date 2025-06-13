@@ -3,13 +3,11 @@ name: Build and Release Favourite Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'favourite-service/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'favourite-service/**'

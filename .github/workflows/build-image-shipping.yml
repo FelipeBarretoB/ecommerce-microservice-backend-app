@@ -3,13 +3,11 @@ name: Build and Release Shipping Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'shipping-service/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'shipping-service/**'
