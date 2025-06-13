@@ -3,13 +3,11 @@ name: Build and Release Payment Service
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'payment-service/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'payment-service/**'

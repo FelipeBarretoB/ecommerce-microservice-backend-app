@@ -3,13 +3,11 @@ name: Build and Release API Gateway
 on:
   push:
     branches:
-      - develop
       - master
     paths:
       - 'api-gateway/**'
   pull_request:
     branches:
-      - develop
       - master
     paths:
       - 'api-gateway/**'
