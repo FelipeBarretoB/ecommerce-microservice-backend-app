@@ -1,3 +1,16 @@
+# [1.0.0-dev.11](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.10...v1.0.0-dev.11) (2025-06-13)
+
+
+### Bug Fixes
+
+* merge error because of docs ([78e9e72](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/78e9e72cac48a91f9e7d3b4dd2123f160e3ecc0e))
+
+
+### Features
+
+* added surefire for test paralelism ([8744065](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/8744065fd5716eeab687c5d17936d90fd513e145))
+* readme doc added ([4e25bbf](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/commit/4e25bbf0d65c762d4629a5bcb24b1c7c96f233d4))
+
 # [1.0.0-dev.10](https://github.com/FelipeBarretoB/ecommerce-microservice-backend-app/compare/v1.0.0-dev.9...v1.0.0-dev.10) (2025-06-12)
 
 
