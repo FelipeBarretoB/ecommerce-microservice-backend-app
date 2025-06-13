@@ -141,28 +141,23 @@ They also trigger a jenkins pipeline who is responsible for testing the manifest
 
 There is one pipeline for each service, and they are located in the `.github/workflows` directory.
 
-example of one of this pipelines:
+example of one of this pipelines using the api-gateway service as example:
 
 ```mermaid
-flowchart TD
-    A([Start: Push or PR to master<br>with changes in api-gateway/**])
-    B([Checkout code])
-    C([Set up JDK 11])
-    D([Get Maven version])
-    E([Set up Docker Buildx])
-    F([Log in to DockerHub])
-    G([Clean, build and push Docker image])
-    H([Trigger Jenkins updatemanifest job])
-    I([End])
+sequenceDiagram
+    participant GitHub as GitHub Actions
+    participant Runner as Workflow Runner
+    participant Docker as Docker
+    participant Jenkins as Jenkins
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
-    H --> I
+    GitHub->>Runner: Trigger (Push or PR to master with changes in api-gateway/**)
+    Runner->>Runner: Checkout code
+    Runner->>Runner: Set up JDK 11
+    Runner->>Runner: Get Maven version
+    Runner->>Runner: Set up Docker Buildx
+    Runner->>Docker: Log in to DockerHub
+    Runner->>Docker: Clean, build and push Docker image
+    Runner->>Jenkins: Trigger Jenkins updatemanifest job
 ```
 
 #### Chanelog pipelines
@@ -179,19 +174,16 @@ the configuration file for sematic realease is located in the `.releaserc` file.
 here is the pipeline: 
 
 ```mermaid
-flowchart TD
-    A([Start: Push, PR, or Manual Trigger on develop, stage, or master])
-    B([Checkout code - fetch-depth 0])
-    C([Set up Node.js 20])
-    D([Install dependencies - npm ci])
-    E([Run semantic-release with GITHUB_TOKEN])
-    F([End])
+sequenceDiagram
+    participant GitHub as GitHub Actions
+    participant Runner as Workflow Runner
+    participant Node as Node.js
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
+    GitHub->>Runner: Trigger (Push, PR, or Manual on develop, stage, or master)
+    Runner->>Runner: Checkout code (fetch-depth 0)
+    Runner->>Node: Set up Node.js 20
+    Runner->>Node: Install dependencies (npm ci)
+    Runner->>Node: Run semantic-release with GITHUB_TOKEN
 ```
 
 #### checkstyle and javadoc pipelines
@@ -204,23 +196,20 @@ This is why the pipeline fails, because it will find a lot of code style issues 
 Heres is the pipeline:
 
 ```mermaid
-flowchart TD
-    A([Start: Push, PR, or Manual Trigger<br>on .java or pom.xml changes])
-    B([Checkout code])
-    C([Set up JDK 11])
-    D([Generate Javadoc])
-    E([Copy Javadoc to docs folder])
-    F([Commit and push Javadoc])
-    G([Run Checkstyle])
-    H([End])
+sequenceDiagram
+    participant GitHub as GitHub Actions
+    participant Runner as Workflow Runner
+    participant Maven as Maven
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
-    G --> H
+    GitHub->>Runner: Trigger (Push, PR, or Manual on .java or pom.xml changes)
+    Runner->>Runner: Checkout code
+    Runner->>Runner: Set up JDK 11
+    Runner->>Maven: Generate Javadoc
+    Runner->>Runner: Copy Javadoc to docs folder
+    Runner->>Runner: Commit and push Javadoc
+    Runner->>Maven: Run Checkstyle
+    Maven-->>Runner: Return Checkstyle results (report)
+    Runner->>GitHub: Return Checkstyle results
 ```
 the checkstyle (and many other pipelines here) use a flag that prevents the pipeline from stopping after the first error, in this case de `-fae` flag, this is done so that we can see all the errors in the code style and fix them all at once, instead of fixing one and then running the pipeline again to see the next one.
 
@@ -241,21 +230,19 @@ If you don't want this function, disable or delete the pipelines in the k8 repos
 heres the pipeline:
 
 ```mermaid
-flowchart TD
-    A([Start: Push or PR on master, develop, or stage])
-    B([Checkout code - fetch-depth 0])
-    C([Set up JDK 11])
-    D([Cache SonarQube packages])
-    E([Cache Maven packages])
-    F([Build and analyze with Maven & SonarQube])
-    G([End])
+sequenceDiagram
+    participant GitHub as GitHub Actions
+    participant Runner as Workflow Runner
+    participant Maven as Maven
+    participant Sonar as SonarQube
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
+    GitHub->>Runner: Trigger (Push or PR on master, develop, or stage)
+    Runner->>Runner: Checkout code (fetch-depth 0)
+    Runner->>Runner: Set up JDK 11
+    Runner->>Runner: Cache SonarQube packages
+    Runner->>Runner: Cache Maven packages
+    Runner->>Maven: Build and analyze with Maven & SonarQube
+    Maven->>Sonar: Send analysis results
 ```
 
 #### Trivy pipelines
@@ -266,20 +253,17 @@ Again, this pipeline will fail, and it has a flag that prevents it from stopping
 here is the pipeline:
 
 ```mermaid
-flowchart TD
-    A([Start: Push, PR, or Manual Trigger on api-gateway/**])
-    B([Checkout only api-gateway folder])
-    C([Set up Docker Buildx])
-    D([Set up JDK 11])
-    E([Build Docker image])
-    F([Run Trivy vulnerability scanner])
-    G([End])
+sequenceDiagram
+    participant GitHub as GitHub Actions
+    participant Runner as Workflow Runner
+    participant Docker as Docker
+    participant Trivy as Trivy
 
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    E --> F
-    F --> G
+    GitHub->>Runner: Trigger (Push, PR, or Manual on api-gateway/**)
+    Runner->>Runner: Checkout only api-gateway folder
+    Runner->>Runner: Set up Docker Buildx
+    Runner->>Runner: Set up JDK 11
+    Runner->>Docker: Build Docker image
+    Runner->>Trivy: Run Trivy vulnerability scanner
 ```
 ---
