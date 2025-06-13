@@ -1,0 +1,9 @@
+CREATE TABLE orders (
+    order_id INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    cart_id INT(11),
+    order_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    order_desc VARCHAR(255),
+    order_fee DECIMAL(7, 2),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP
+);

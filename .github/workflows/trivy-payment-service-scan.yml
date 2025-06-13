@@ -1,0 +1,45 @@
+name: Scan Payment Service Image
+
+on:
+  push:
+    paths:
+      - 'payment-service/**'
+  pull_request:
+    paths:
+      - 'payment-service/**'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout only payment-service folder
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            payment-service
+          fetch-depth: 1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Build Docker image
+        run: |
+          cd payment-service
+          ./mvnw clean package
+          docker build -t payment-service:test .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'payment-service:test'
+          format: table
+          exit-code: 1
+          ignore-unfixed: true
+          vuln-type: 'library'
