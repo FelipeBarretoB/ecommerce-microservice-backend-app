@@ -1,0 +1,45 @@
+name: Scan Service Discovery Image
+
+on:
+  push:
+    paths:
+      - 'service-discovery/**'
+  pull_request:
+    paths:
+      - 'service-discovery/**'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout only service-discovery folder
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            service-discovery
+          fetch-depth: 1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Build Docker image
+        run: |
+          cd service-discovery
+          ./mvnw clean package
+          docker build -t service-discovery:test .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: 'service-discovery:test'
+          format: table
+          exit-code: 1
+          ignore-unfixed: true
+          vuln-type: 'library'

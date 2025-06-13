@@ -45,13 +45,3 @@ public class CredentialDto implements Serializable {
 	private Set<VerificationTokenDto> verificationTokenDtos;
 	
 }
-
-
-
-
-
-
-
-
-
-

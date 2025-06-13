@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.selimhorri.app.business.order.model.CartDto;
 import com.selimhorri.app.business.order.model.response.CartOrderServiceDtoCollectionResponse;
 
-@FeignClient(name = "ORDER-SERVICE", contextId = "cartClientService", path = "/order-service/api/carts")
+@FeignClient(name = "order-service", contextId = "cartClientService", path = "/order-service/api/carts")
 public interface CartClientService {
 	
 	@GetMapping
