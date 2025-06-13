@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.selimhorri</groupId>
 		<artifactId>ecommerce-microservice-backend</artifactId>
-		<version>0.1.0</version>
+		<version>1.0.0-dev.10</version>
 	</parent>
 	<artifactId>order-service</artifactId>
 	<name>order-service</name>
@@ -109,11 +109,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>${project.artifactId}-v${project.version}</finalName>
+		<finalName>order-service</finalName>
 	</build>
 	
 </project>
-
-
-
-
