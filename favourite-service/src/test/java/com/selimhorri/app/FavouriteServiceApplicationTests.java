@@ -8,10 +8,3 @@ class FavouriteServiceApplicationTests {
 	
 	
 }
-
-
-
-
-
-
-
