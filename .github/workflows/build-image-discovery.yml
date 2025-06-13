@@ -5,12 +5,12 @@ on:
     branches:
       - master
     paths:
-      - 'favourite-service/**'
+      - 'service-discovery/**'
   pull_request:
     branches:
       - master
     paths:
-      - 'favourite-service/**'
+      - 'service-discovery/**'
 
 jobs:
   build-and-release:
