@@ -1,6 +1,6 @@
 # e-Commerce Microservice Backend App
 
-Hi, welcom, this is the main file for my last (hopefully) university project. This project was done by  [Vanesa Ramos](https://github.com/Vanesa155) and [Felipe Barreto](https://github.com/FelipeBarretoB) for the automation subject. 
+Hi, welcome, this is the main file for my last (hopefully) university project. This project was done by  [Vanesa Ramos](https://github.com/Vanesa155) and [Felipe Barreto](https://github.com/FelipeBarretoB) for the automation subject. 
 
 This project was based in an already existing project, which you can find [here](https://github.com/SelimHorri/ecommerce-microservice-backend-app). Both the front and back were already developed, however we had to change a lot of things just to make it work. Because this is an automation/DevOps project, we just got it to a point where it could stand and then develop the automation parts.
 
@@ -23,6 +23,8 @@ This app was deployed in AKS (Azure Kubernetes Service) and is integrated with a
 And a lot others
 
 You can read the old readme for the original project [here](README_old.md).
+
+Here's a video (in spanish) of the overview of the project: [link to the video](https://drive.google.com/file/d/1rZi9P0Wm5yeezfFj3RviPtYNx-UmLzeM/view?usp=sharing) 
 
 ---
 
