@@ -11,8 +11,8 @@ on:
       - develop
       - stage
       - master
-  schedule:
-    - cron: '0 4 * * *' # 4:00 UTC daily
+  # schedule:
+  #  - cron: '0 4 * * *' # 4:00 UTC daily
 
 jobs:
   build:
